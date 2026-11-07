@@ -6,125 +6,20 @@
 <title>MED SCAN – Your prescription, explained</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#F1FAF6; --surface:#FFFFFF; --ink:#0C2B27; --muted:#4D6B66; --green:#0E4D45; --mint:#FFE2A8; --coral:#FF6B57; --sky:#D6EAFB; --line:#CFE5DD;
-  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--bg:#08201D;--surface:#0E302B;--ink:#E8F6F1;--muted:#9BBDB5;--green:#1B6B5F;--mint:#0E4D45;--sky:#123F3A;--line:#1B4740}
-}
-:root[data-theme="dark"]{--bg:#08201D;--surface:#0E302B;--ink:#E8F6F1;--muted:#9BBDB5;--green:#1B6B5F;--mint:#0E4D45;--sky:#123F3A;--line:#1B4740}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.05;margin:0;letter-spacing:-.02em}
-a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
-nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
-.logo{font:800 24px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo i{width:34px;height:34px;border-radius:11px;background:var(--green);color:var(--bg);display:grid;place-items:center;font:800 17px 'Bricolage Grotesque';font-style:normal}
-.btn{display:inline-block;padding:14px 24px;border-radius:999px;background:var(--coral);color:#fff;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:16px}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
-.btn:focus-visible,a:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
-/* hero */
-.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding:30px 0 70px}
-.hero h1{font-size:clamp(44px,7vw,84px);font-weight:800}
-.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--mint) 62%)}
-.hero p.lead{font-size:20px;color:var(--muted);max-width:30em;margin:22px 0 30px}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
-.langs{display:flex;gap:8px;margin-top:28px;flex-wrap:wrap}
-.langs span{padding:6px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:14px;font-weight:500}
-.stage{position:relative;height:560px}
-.blob{position:absolute;inset:30px 10px 10px 30px;background:var(--mint);border-radius:46% 54% 42% 58%/50% 44% 56% 50%;opacity:.7}
-.pill{position:absolute;border-radius:999px;transform:rotate(var(--r))}
-.phone{position:absolute;width:250px;height:510px;border-radius:38px;background:#0C1F1C;padding:10px;box-shadow:0 30px 60px -20px rgba(12,43,39,.45)}
-.phone .scr{width:100%;height:100%;border-radius:29px;background:#fff;color:#0C2B27;overflow:hidden;position:relative;font-size:13px}
-.p1{left:0;top:20px;transform:rotate(-6deg)}
-.p2{right:0;top:50px;transform:rotate(5deg)}
-.bar{height:44px;display:flex;align-items:center;padding:0 16px;font:700 15px 'Bricolage Grotesque'}
-.paper{margin:6px 14px;background:#FFFDF2;border:1px solid #E7E0BE;border-radius:8px;height:300px;position:relative;overflow:hidden}
-.scan{position:absolute;left:0;right:0;height:3px;background:var(--coral);box-shadow:0 0 18px 6px rgba(255,107,87,.55);animation:scan 3.4s ease-in-out 1.2s 2 both}
-@keyframes scan{0%{top:0}50%{top:100%}100%{top:0}}
-.chip{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:600;background:#1B6B5F;color:#fff}
-.chip.warn{background:#FFE3DE;color:#B33A29}
-.row{margin:8px 14px;padding:10px 12px;border-radius:14px;border:1px solid #DDEBE6;display:flex;justify-content:space-between;align-items:center;gap:8px}
-.row b{display:block;font-size:14px}
-.row small{color:#5C7A74}
-.slot{margin:8px 14px;padding:10px 12px;border-radius:14px;background:#F1FAF6}
-.slot h4{margin:0 0 4px;font:700 13px 'Bricolage Grotesque'}
-.slot div{display:flex;gap:6px;align-items:center;font-size:12.5px}
-/* sections */
-section{padding:70px 0}
-.title{font-size:clamp(32px,4.6vw,54px);font-weight:800;max-width:15em}
-.sub{color:var(--muted);max-width:34em;margin:14px 0 0}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
-.step{background:var(--surface);border-radius:28px;padding:26px;border:1px solid var(--line)}
-.step svg{width:100%;height:140px;margin-bottom:12px}
-.step h3{font-size:24px;margin-bottom:6px}
-.step p{margin:0;color:var(--muted);font-size:16px}
-.step .n{font:800 15px 'Bricolage Grotesque';color:var(--coral)}
-.band{background:var(--green);color:#F1FAF6;border-radius:44px;padding:56px 40px}
-.band .title{color:#F1FAF6}
-.band .sub{color:#B9DDD2}
-.chain{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:34px 0 8px}
-.chain span{background:rgba(255,255,255,.1);padding:10px 16px;border-radius:14px;font-weight:600;font-size:15px}
-.chain b{color:var(--mint)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
-.g{background:rgba(255,255,255,.07);border-radius:22px;padding:20px}
-.g h3{font-size:19px;margin-bottom:6px;color:#fff}
-.g p{margin:0;font-size:15px;color:#B9DDD2;line-height:1.5}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.codes{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.codes code{background:var(--surface);border:1px solid var(--line);padding:6px 12px;border-radius:10px;font:600 15px ui-monospace,Menlo,monospace}
-.tri{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:26px;display:grid;gap:14px}
-.tri div{padding:14px 18px;border-radius:18px;background:var(--bg)}
-.tri small{display:block;color:var(--muted);font-weight:600;font-size:13px;margin-bottom:2px}
-.ur{font-family:'Noto Nastaliq Urdu',serif;direction:rtl;font-size:19px;line-height:2.1}
-.tracker{background:var(--sky);border-radius:44px;padding:50px 40px}
-.tracker .title{color:var(--ink)}
-.bars{display:flex;gap:10px;align-items:flex-end;height:150px;margin-top:20px}
-.bars i{flex:1;background:var(--green);border-radius:10px 10px 4px 4px;display:block}
-.bars i.low{background:var(--coral)}
-.stat{display:flex;gap:28px;margin-top:20px;flex-wrap:wrap}
-.stat b{font:800 38px 'Bricolage Grotesque';display:block;line-height:1}
-.stat span{font-size:14px;color:var(--muted)}
-.final{text-align:center;padding:90px 0}
-.final .title{margin:0 auto}
-.final .cta{justify-content:center;margin-top:30px}
-footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.store{display:inline-flex;align-items:center;gap:12px;padding:10px 22px 10px 16px;border-radius:14px;background:#0C1F1C;color:#fff;text-decoration:none;border:1.5px solid #3A5A54;text-align:left;line-height:1.15;font-weight:600;font-size:19px}
-.store small{display:block;font-size:11.5px;font-weight:400;opacity:.85}
-.navr{display:flex;align-items:center;gap:12px}
-.tg{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px}
-.tg button{border:0;background:transparent;color:var(--ink);padding:8px 16px;border-radius:999px;font:600 15px Figtree,'Noto Nastaliq Urdu',sans-serif;cursor:pointer;line-height:1.4}
-.tg button[aria-pressed=true]{background:var(--green);color:#fff}
-.tg button:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
-.tri .ur{display:block;text-align:right}
-.store{direction:ltr}
-html[lang=ur] body,html[lang=ur] h1,html[lang=ur] h2,html[lang=ur] h3{font-family:'Noto Nastaliq Urdu',serif;letter-spacing:0}
-html[lang=ur] body{line-height:2.1}
-html[lang=ur] h1,html[lang=ur] h2,html[lang=ur] h3{line-height:1.7}
-html[lang=ur] .hero h1{font-size:clamp(34px,5.4vw,60px)}
-html[lang=ur] .title{font-size:clamp(28px,4vw,46px)}
-html[lang=ur] .stage .scr,html[lang=ur] .store{font-family:Figtree,system-ui,sans-serif;line-height:1.4}
-.note{font-size:13px;color:var(--muted);margin-top:14px}
-@media(max-width:860px){
-  .hero,.split{grid-template-columns:1fr}
-  .steps,.grid{grid-template-columns:1fr}
-  .stage{height:540px;max-width:430px;margin:0 auto;width:100%}
-  .band,.tracker{padding:36px 22px;border-radius:32px}
-  section{padding:48px 0}
-}
-@media(max-width:440px){.phone{width:210px;height:430px}.paper{height:230px}.p1{left:-6px}.p2{right:-6px;top:90px}.stage{height:500px}}
-@media(prefers-reduced-motion:reduce){.scan{animation:none;top:50%}html{scroll-behavior:auto}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
 <nav>
-  <a class="logo" href="#top"><i>M</i>MED SCAN</a>
-  <div class="navr"><div class="tg" role="group" aria-label="Language"><button data-l="en" aria-pressed="true">EN</button><button data-l="ur" aria-pressed="false">اردو</button></div><a class="btn" href="#get" data-i="nav">Get the app</a></div>
+  <a class="logo" href="index.html"><i>M</i>MED SCAN</a>
+  <div class="navr">
+    <div class="tg" role="group" aria-label="Language">
+      <button data-l="en" aria-pressed="true">EN</button>
+      <button data-l="ur" aria-pressed="false">اردو</button>
+      <button data-l="ru" aria-pressed="false">RU</button>
+    </div>
+    <a class="btn" href="download.html" data-i="nav">Get the app</a>
+  </div>
 </nav>
 
 <header class="hero" id="top">
@@ -132,18 +27,16 @@ html[lang=ur] .stage .scr,html[lang=ur] .store{font-family:Figtree,system-ui,san
     <h1 data-i="h1">Your prescription, <em>decoded.</em> Your doses, never missed.</h1>
     <p class="lead" data-i="lead">Snap a photo of any doctor’s handwriting. MED SCAN reads it, decodes 1+0+1 and TDS, and reminds you before every dose.</p>
     <div class="cta">
-      <a class="btn" href="#get" data-i="nav">Get the app</a>
-      <a class="btn ghost" href="#how" data-i="how">See how it works</a>
+      <a class="btn" href="how.html" data-i="how">See how it works</a>
+      <a class="btn ghost" href="download.html" data-i="nav">Get the app</a>
     </div>
     <div class="langs"><span>English</span><span>Roman Urdu</span><span class="ur" style="line-height:1.6;font-size:15px">اردو</span></div>
   </div>
-
   <div class="stage" dir="ltr" aria-hidden="true">
     <div class="blob"></div>
     <svg class="pill" style="--r:-28deg;left:200px;top:0;width:90px;height:34px" viewBox="0 0 90 34"><rect width="90" height="34" rx="17" fill="#FF6B57"/><path d="M45 0h28a17 17 0 010 34H45z" fill="#fff"/></svg>
     <svg class="pill" style="--r:32deg;right:-4px;bottom:40px;width:80px;height:30px" viewBox="0 0 80 30"><rect width="80" height="30" rx="15" fill="#0E4D45"/><path d="M40 0h25a15 15 0 010 30H40z" fill="#FFC857"/></svg>
     <div class="pill" style="--r:0deg;left:6px;bottom:30px;width:46px;height:46px;background:#FFC857;border:4px solid #fff"></div>
-
     <div class="phone p1"><div class="scr">
       <div class="bar">Scanning…</div>
       <div class="paper">
@@ -167,7 +60,6 @@ html[lang=ur] .stage .scr,html[lang=ur] .store{font-family:Figtree,system-ui,san
       <div class="row"><div><b>Panadol</b><small>1+0+1 · after food</small></div><span class="chip">Verified</span></div>
       <div class="row"><div><b>Augmentin?</b><small>Hard to read</small></div><span class="chip warn">Check</span></div>
     </div></div>
-
     <div class="phone p2"><div class="scr">
       <div class="bar">Today’s schedule</div>
       <div class="slot"><h4>Morning · 8:00</h4><div><span class="chip">1</span> Panadol, after food</div></div>
@@ -179,7 +71,7 @@ html[lang=ur] .stage .scr,html[lang=ur] .store{font-family:Figtree,system-ui,san
   </div>
 </header>
 
-<section id="how" style="padding-top:20px">
+<section>
   <h2 class="title" data-i="ht">Doctor’s scribble to daily routine in 3 taps.</h2>
   <div class="steps">
     <div class="step">
@@ -195,74 +87,11 @@ html[lang=ur] .stage .scr,html[lang=ur] .store{font-family:Figtree,system-ui,san
       <span class="n" data-i="sn3">Step 3</span><h3 data-i="st3">Never miss it</h3><p data-i="sp3">Alarms for every dose, for exactly as many days as prescribed.</p>
     </div>
   </div>
-</section>
-
-<section>
-  <div class="band">
-    <h2 class="title" data-i="bt">AI reads it. Facts decide it.</h2>
-    <p class="sub" data-i="bs">One wrong medicine is not a typo. That’s why AI never gets the final word.</p>
-    <div class="chain"><span data-i="c1">Photo</span><b>›</b><span data-i="c2">Cleanup</span><b>›</b><span data-i="c3">AI reads</span><b>›</b><span data-i="c4">Rules decode</span><b>›</b><span data-i="c5">Database match</span><b>›</b><span data-i="c6">You confirm</span></div>
-    <div class="grid">
-      <div class="g"><h3 data-i="g1t">Rules for dosing</h3><p data-i="g1p">1+0+1, BD, TDS, HS, SOS always mean the same thing. Zero guessing.</p></div>
-      <div class="g"><h3 data-i="g2t">Real medicines only</h3><p data-i="g2p">Every name must exist in our verified list. Misreads become a match or “not recognised”.</p></div>
-      <div class="g"><h3 data-i="g3t">Flagged when unsure</h3><p data-i="g3p">Reminders won’t start until every flagged item is checked, fixed or removed.</p></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="split">
-    <div>
-      <h2 class="title" data-i="lt">Doctor’s shorthand, in your language.</h2>
-      <p class="sub" data-i="ls">One schedule in English, Roman Urdu or Urdu. Built from templates, so the words always match your reminders.</p>
-      <div class="codes"><code>1+0+1</code><code>BD</code><code>TDS</code><code>HS</code><code>SOS</code><code>AC / PC</code><code>x5/7</code></div>
-    </div>
-    <div class="tri" dir="ltr">
-      <div><small>English</small>Take 1 tablet in the morning and at night, after food, for 5 days.</div>
-      <div><small>Roman Urdu</small>Subah aur raat khane ke baad 1 goli lein, 5 din tak.</div>
-      <div><small>اردو</small><span class="ur">صبح اور رات کھانے کے بعد ایک گولی لیں، پانچ دن تک۔</span></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="tracker">
-    <div class="split">
-      <div>
-        <h2 class="title" data-i="tt">Know what you took. Catch what you missed.</h2>
-        <p class="sub" style="color:var(--ink)" data-i="ts">Tap Taken or Skip on every dose. See today’s doses, missed ones, streaks and a 7-day history. Your log never leaves your phone.</p>
-        <div class="stat"><div><b>86%</b><span data-i="x1">taken this week</span></div><div><b>5</b><span data-i="x2">day streak</span></div><div><b>8</b><span data-i="x3">doses left</span></div></div>
-      </div>
-      <div class="bars" dir="ltr" role="img" aria-label="Seven day adherence chart"><i style="height:90%"></i><i style="height:100%"></i><i style="height:70%"></i><i class="low" style="height:40%"></i><i style="height:95%"></i><i style="height:100%"></i><i style="height:80%"></i></div>
-    </div>
-  </div>
-</section>
-
-<section class="final" id="get">
-  <h2 class="title" data-i="ft">Snap it. Schedule it. Never miss a dose.</h2>
-  <div class="cta">
-    <a class="store" href="#" aria-label="Get it on Google Play"><svg viewBox="0 0 24 24" width="30" height="30"><path fill="#00C3FF" d="M3.6 1.2 13.4 11.9 3.6 22.8Q3 22.5 3 21.8V2.2Q3 1.5 3.6 1.2Z"/><path fill="#00E676" d="M3.6 1.2 16.6 8.6 13.4 11.9Z"/><path fill="#FFD400" d="M16.6 8.6 21 11Q21.8 12 21 13L16.6 15.4 13.4 11.9Z"/><path fill="#FF3D57" d="M3.6 22.8 13.4 11.9 16.6 15.4Z"/></svg><span><small>Get it on</small>Google Play</span></a>
-    <a class="store" href="#" aria-label="Download on the App Store"><svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M16.37 1.43c0 1.14-.46 2.22-1.2 3-.8.84-2.1 1.5-3.15 1.4-.13-1.1.42-2.25 1.15-3 .8-.85 2.18-1.46 3.2-1.4zM20.5 17.3c-.55 1.27-.82 1.84-1.52 2.96-.98 1.57-2.37 3.52-4.08 3.54-1.52.02-1.92-.99-3.99-.98-2.07.01-2.5 1-4.02.99-1.72-.02-3.03-1.78-4.01-3.35C.1 16.1-.2 10.9 1.5 8.3c1.2-1.84 3.1-2.92 4.88-2.92 1.81 0 2.95 1 4.45 1 1.45 0 2.33-1 4.43-1 1.58 0 3.26.86 4.46 2.35-3.92 2.15-3.28 7.75.78 9.57z"/></svg><span><small>Download on the</small>App Store</span></a>
-  </div>
-  <p class="note" data-i="fn">MED SCAN is a reading aid. Always confirm medicines with your pharmacist or doctor.</p>
+  <div class="cta" style="justify-content:center;margin-top:40px"><a class="btn" href="features.html">Explore features</a></div>
 </section>
 
 <footer><span>© 2026 MED SCAN</span><span data-i="fb">Built with FastAPI, LangGraph, Gemini and Flutter</span></footer>
 </div>
-<script>
-(function(){
-var U={"nav": "ایپ حاصل کریں", "how": "دیکھیں کیسے کام کرتا ہے", "h1": "آپ کا نسخہ، اب <em>آسان۔</em> آپ کی خوراک، اب کبھی نہ چھوٹے۔", "lead": "ڈاکٹر کی لکھائی کی تصویر کھینچیں۔ MED SCAN اسے پڑھتا ہے، 1+0+1 اور TDS سمجھاتا ہے، اور ہر خوراک سے پہلے یاد دلاتا ہے۔", "ht": "ڈاکٹر کی لکھائی سے روزانہ کے شیڈول تک، صرف تین ٹیپ میں۔", "sn1": "مرحلہ 1", "st1": "تصویر لیں", "sp1": "تصویر کھینچیں یا گیلری سے چنیں۔ تصویر کو ہم خود صاف کر دیتے ہیں۔", "sn2": "مرحلہ 2", "st2": "جانچیں", "sp2": "جو لفظ واضح نہ ہو اسے نشان زد کر دیا جاتا ہے۔ آگے بڑھنے سے پہلے درست کریں، تصدیق کریں یا ہٹا دیں۔", "sn3": "مرحلہ 3", "st3": "کبھی نہ بھولیں", "sp3": "ہر خوراک کا الارم، بالکل اتنے دن جتنے نسخے میں لکھے ہوں۔", "bt": "اے آئی پڑھتا ہے، فیصلہ حقائق کرتے ہیں۔", "bs": "غلط دوا کوئی چھوٹی غلطی نہیں۔ اسی لیے آخری فیصلہ اے آئی کے ہاتھ میں نہیں۔", "c1": "تصویر", "c2": "صفائی", "c3": "اے آئی پڑھتا ہے", "c4": "قواعد سمجھتے ہیں", "c5": "ڈیٹابیس سے ملان", "c6": "آپ کی تصدیق", "g1t": "خوراک کے اصول", "g1p": "1+0+1، BD، TDS، HS، SOS کے معنی ہمیشہ ایک ہی رہتے ہیں۔ کوئی اندازہ نہیں۔", "g2t": "صرف اصل ادویات", "g2p": "ہر نام تصدیق شدہ فہرست میں ہونا ضروری ہے۔ غلط پڑھا گیا نام یا درست ملتا ہے یا “پہچانا نہیں گیا” آتا ہے۔", "g3t": "شک ہو تو نشان", "g3p": "ریمائنڈر تب تک شروع نہیں ہوتے جب تک ہر نشان زد دوا کی جانچ، درستگی یا حذف نہ ہو۔", "lt": "ڈاکٹر کی مخفف زبان، آپ کی اپنی زبان میں۔", "ls": "ایک ہی شیڈول انگریزی، رومن اردو یا اردو میں۔ ٹیمپلیٹس سے بنتا ہے، اس لیے الفاظ ہمیشہ ریمائنڈرز سے مطابقت رکھتے ہیں۔", "tt": "جانیں کیا لیا، پکڑیں جو رہ گیا۔", "ts": "ہر خوراک پر “لی” یا “چھوڑی” دبائیں۔ آج کی خوراکیں، رہ جانے والی، مسلسل دن اور سات دن کی تاریخ دیکھیں۔ آپ کا ریکارڈ آپ کے فون سے باہر نہیں جاتا۔", "x1": "اس ہفتے لی گئیں", "x2": "دن مسلسل", "x3": "خوراکیں باقی", "ft": "کھینچیں، طے کریں، کوئی خوراک نہ چھوڑیں۔", "fn": "MED SCAN ایک پڑھنے میں مدد کا ذریعہ ہے۔ دوا کی تصدیق ہمیشہ اپنے فارماسسٹ یا ڈاکٹر سے کریں۔", "fb": "FastAPI، LangGraph، Gemini اور Flutter سے تیار"},E={},L='en';
-document.querySelectorAll('[data-i]').forEach(function(e){E[e.dataset.i]=e.innerHTML});
-var T={en:'MED SCAN – Your prescription, decoded',ur:'MED SCAN – آپ کا نسخہ، اب آسان'};
-function set(l){L=l;var d=l==='ur'?U:E;
-document.querySelectorAll('[data-i]').forEach(function(e){e.innerHTML=d[e.dataset.i]});
-var h=document.documentElement;h.lang=l;h.dir=l==='ur'?'rtl':'ltr';document.title=T[l];
-document.querySelectorAll('.tg button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
-try{localStorage.setItem('ms-lang',l)}catch(e){}}
-document.querySelectorAll('.tg button').forEach(function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
-var s=null;try{s=localStorage.getItem('ms-lang')}catch(e){}
-if(s==='ur')set('ur');
-})();
-</script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MED SCAN – Features</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="logo" href="index.html"><i>M</i>MED SCAN</a>
+  <div class="navr">
+    <div class="tg" role="group" aria-label="Language">
+      <button data-l="en" aria-pressed="true">EN</button>
+      <button data-l="ur" aria-pressed="false">اردو</button>
+      <button data-l="ru" aria-pressed="false">RU</button>
+    </div>
+    <a class="btn" href="download.html" data-i="nav">Get the app</a>
+  </div>
+</nav>
+
+<section>
+  <div class="band">
+    <h2 class="title" data-i="bt">AI reads it. Facts decide it.</h2>
+    <p class="sub" data-i="bs">One wrong medicine is not a typo. That’s why AI never gets the final word.</p>
+    <div class="chain"><span data-i="c1">Photo</span><b>›</b><span data-i="c2">Cleanup</span><b>›</b><span data-i="c3">AI reads</span><b>›</b><span data-i="c4">Rules decode</span><b>›</b><span data-i="c5">Database match</span><b>›</b><span data-i="c6">You confirm</span></div>
+    <div class="grid">
+      <div class="g"><h3 data-i="g1t">Rules for dosing</h3><p data-i="g1p">1+0+1, BD, TDS, HS, SOS always mean the same thing. Zero guessing.</p></div>
+      <div class="g"><h3 data-i="g2t">Real medicines only</h3><p data-i="g2p">Every name must exist in our verified list. Misreads become a match or “not recognised”.</p></div>
+      <div class="g"><h3 data-i="g3t">Flagged when unsure</h3><p data-i="g3p">Reminders won’t start until every flagged item is checked, fixed or removed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="split">
+    <div>
+      <h2 class="title" data-i="lt">Doctor’s shorthand, in your language.</h2>
+      <p class="sub" data-i="ls">One schedule in English, Roman Urdu or Urdu. Built from templates, so the words always match your reminders.</p>
+      <div class="codes"><code>1+0+1</code><code>BD</code><code>TDS</code><code>HS</code><code>SOS</code><code>AC / PC</code><code>x5/7</code></div>
+    </div>
+    <div class="tri" dir="ltr">
+      <div><small>English</small>Take 1 tablet in the morning and at night, after food, for 5 days.</div>
+      <div><small>Roman Urdu</small>Subah aur raat khane ke baad 1 goli lein, 5 din tak.</div>
+      <div><small>اردو</small><span class="ur">صبح اور رات کھانے کے بعد ایک گولی لیں، پانچ دن تک۔</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="tracker">
+    <div class="split">
+      <div>
+        <h2 class="title" data-i="tt">Know what you took. Catch what you missed.</h2>
+        <p class="sub" style="color:var(--ink)" data-i="ts">Tap Taken or Skip on every dose. See today’s doses, missed ones, streaks and a 7-day history. Your log never leaves your phone.</p>
+        <div class="stat"><div><b>86%</b><span data-i="x1">taken this week</span></div><div><b>5</b><span data-i="x2">day streak</span></div><div><b>8</b><span data-i="x3">doses left</span></div></div>
+      </div>
+      <div class="bars" dir="ltr" role="img" aria-label="Seven day adherence chart"><i style="height:90%"></i><i style="height:100%"></i><i style="height:70%"></i><i class="low" style="height:40%"></i><i style="height:95%"></i><i style="height:100%"></i><i style="height:80%"></i></div>
+    </div>
+  </div>
+</section>
+
+<footer><span>© 2026 MED SCAN</span><span data-i="fb">Built with FastAPI, LangGraph, Gemini and Flutter</span></footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
