@@ -1,5 +1,6 @@
 (function(){
   var NAVBAR='<nav>'+
+    '<button class="nav-mobile" aria-label="Menu" aria-expanded="false">☰</button>'+
     '<a class="logo" href=""><i>M</i>MED SCAN</a>'+
     '<div class="navr">'+
       '<a class="btn ghost" data-nav="home">Home</a>'+
@@ -44,11 +45,30 @@
     ph.querySelectorAll('.tg button').forEach(function(b){
       b.addEventListener('click',function(){set(b.dataset.l);});
     });
+    var mob=ph.querySelector('.nav-mobile');
+    var navr=ph.querySelector('.navr');
+    if(mob&&navr){
+      mob.addEventListener('click',function(){
+        var open=mob.getAttribute('aria-expanded')==='true';
+        mob.setAttribute('aria-expanded',String(!open));
+        navr.style.display=open?'none':'flex';
+      });
+      ph.querySelectorAll('.navr a').forEach(function(a){
+        a.addEventListener('click',function(){
+          if(window.innerWidth<=860){navr.style.display='none';mob.setAttribute('aria-expanded','false');}
+        });
+      });
+    }
   }
   function set(l){L=l;var d=l==='ur'?U:l==='ru'?R:E;document.querySelectorAll('[data-i]').forEach(function(e){e.innerHTML=d[e.dataset.i];});var h=document.documentElement;h.lang=l;h.dir=l==='ur'?'rtl':'ltr';document.title=T[l];document.querySelectorAll('.tg button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l);});try{localStorage.setItem('ms-lang',l)}catch(e){}}
-window.__msSetLang=set;
+  window.__msSetLang=set;
   injectNavbar();
   document.querySelectorAll('[data-i]').forEach(function(e){E[e.dataset.i]=e.innerHTML});
   var s=null;try{s=localStorage.getItem('ms-lang')}catch(e){}
   if(s==='ur')set('ur');else if(s==='ru')set('ru');
+  window.addEventListener('resize',function(){
+    var navr=document.querySelector('.navr');
+    var mob=document.querySelector('.nav-mobile');
+    if(navr&&mob&&window.innerWidth>860){navr.style.display='';mob.setAttribute('aria-expanded','false');}
+  });
 })();

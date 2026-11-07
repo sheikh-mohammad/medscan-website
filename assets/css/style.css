@@ -91,11 +91,32 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
 .tg button:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
 .navr a.btn.ghost[data-nav]{position:relative}
 .navr a.btn.ghost.active{color:var(--green);border-color:var(--green)}
-.nav-mobile{display:none}
+.nav-mobile{display:none;background:none;border:none;color:var(--ink);font-size:24px;cursor:pointer;padding:8px;border-radius:8px}
+.nav-mobile:active{background:rgba(0,0,0,.08)}
 @media(max-width:860px){
-  .navr{flex-wrap:wrap}
-  .nav-mobile{display:flex;margin-top:10px;width:100;justify-content:center;gap:6px}
+  .navr{display:none;flex-direction:column;gap:8px;position:absolute;top:60px;right:0;left:0;background:var(--surface);border-top:1px solid var(--line);padding:16px 22px}
+  .navr.open{display:flex}
+  .nav-mobile{display:block}
+  .navr a.btn.ghost{border:none;background:none;padding:12px 8px;text-align:left;font-weight:600}
+  .navr a.btn.ghost.active{color:var(--green)}
+  .tg{order:1;margin-top:10px}
+  .tg button{font-size:14px;padding:6px 12px}
+  .navr .btn{width:100%;text-align:center}
 }
+/* Minimal animations */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.animate-in{animation:slideUp .5s ease both}
+.fade-in{animation:fadeIn .5s ease both}
+.navr a.btn.ghost{transition:color .2s,border-color .2s,background .2s}
+.tg button{transition:background .2s,color .2s}
+.btn{transition:transform .1s,box-shadow .2s}
+.btn:active{transform:scale(.96)}
+.step{opacity:0;animation:slideUp .5s ease forwards}
+.step:nth-child(1){animation-delay:.1s}
+.step:nth-child(2){animation-delay:.2s}
+.step:nth-child(3){animation-delay:.3s}
 .tri .ur{display:block;text-align:right}
 .store{direction:ltr}
 html[lang=ur] body,html[lang=ur] h1,html[lang=ur] h2,html[lang=ur] h3{font-family:'Noto Nastaliq Urdu',serif;letter-spacing:0}
