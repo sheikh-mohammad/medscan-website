@@ -12,7 +12,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,sy
 h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.05;margin:0;letter-spacing:-.02em}
 a{color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
-nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+nav,.site-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 0;position:relative}
 .logo{font:800 24px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;gap:10px;text-decoration:none}
 .logo i{width:34px;height:34px;border-radius:11px;background:var(--green);color:var(--bg);display:grid;place-items:center;font:800 17px 'Bricolage Grotesque';font-style:normal}
 .btn{display:inline-block;padding:14px 24px;border-radius:999px;background:var(--coral);color:#fff;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:16px}
@@ -85,29 +85,44 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);f
 .store{display:inline-flex;align-items:center;gap:12px;padding:10px 22px 10px 16px;border-radius:14px;background:#0C1F1C;color:#fff;text-decoration:none;border:1.5px solid #3A5A54;text-align:left;line-height:1.15;font-weight:600;font-size:19px}
 .store small{display:block;font-size:11.5px;font-weight:400;opacity:.85}
 .navr{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.tg{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px}
-.tg button{border:0;background:transparent;color:var(--ink);padding:8px 16px;border-radius:999px;font:600 15px Figtree,'Noto Nastaliq Urdu',sans-serif;cursor:pointer;line-height:1.4}
+.tg{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px;gap:2px}
+.tg button{border:0;background:transparent;color:var(--ink);padding:10px 18px;border-radius:999px;font:600 17px Figtree,'Noto Nastaliq Urdu',sans-serif;cursor:pointer;line-height:1.2;min-height:44px}
 .tg button[aria-pressed=true]{background:var(--green);color:#fff}
 .tg button:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+.site-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 0;flex-wrap:wrap}
+.site-header .tg{margin-left:auto}
+.section-surface{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+.about-card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px}
+.about-card h3{font-size:22px;margin:0 0 8px}
+.about-card p{margin:0;color:var(--muted);font-size:15px}
+.disc{margin-top:22px;padding:20px 22px;border-radius:22px;border:1px solid var(--line);background:rgba(255,107,87,.06)}
+.disc h3{font-size:20px;margin:0 0 8px}
+.disc p{margin:0;color:var(--muted)}
 .navr a.btn.ghost[data-nav]{position:relative}
 .navr a.btn.ghost.active{color:var(--green);border-color:var(--green)}
-.nav-mobile{display:none;background:none;border:none;color:var(--ink);font-size:26px;cursor:pointer;padding:10px;border-radius:8px;line-height:1}
+.nav-mobile{display:none;background:var(--surface);border:1px solid var(--line);color:var(--ink);font-size:26px;cursor:pointer;padding:8px 12px;border-radius:12px;line-height:1;min-width:46px;min-height:46px;align-items:center;justify-content:center;z-index:120}
+.nav-mobile:hover{background:rgba(14,77,69,.06);color:var(--green);border-color:rgba(14,77,69,.2)}
 .nav-mobile:active{background:rgba(0,0,0,.08)}
 @media(max-width:860px){
-  .navr{display:none;flex-direction:column;gap:6px;position:absolute;top:62px;right:0;left:0;background:var(--surface);border-top:1px solid var(--line);padding:18px 22px;z-index:100}
+  nav,.site-nav{flex-wrap:wrap;align-items:center}
+  .nav-mobile{display:inline-flex;margin-left:auto}
+  .navr{display:none;flex-direction:column;gap:6px;width:100%;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:14px;margin-top:8px;box-shadow:0 18px 40px -24px rgba(12,43,39,.35);z-index:100}
   .navr.open{display:flex}
-  .nav-mobile{display:block}
-  .navr a.btn.ghost{border:none;background:none;padding:14px 10px;text-align:left;font-weight:600;font-size:15px;color:var(--ink);border-radius:10px}
+  .navr a.btn.ghost{border:none;background:none;padding:14px 12px;text-align:left;font-weight:600;font-size:15px;color:var(--ink);border-radius:12px;display:block;width:100%}
   .navr a.btn.ghost:hover{background:rgba(14,77,69,.06);color:var(--green)}
-  .navr a.btn.ghost.active{color:var(--green);background:rgba(14,77,69,.08)}
-  .tg{order:2;width:100;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
-  .tg button{font-size:15px;padding:10px 16px;width:32%;text-align:center}
-  .navr .btn{width:100%;text-align:center;padding:14px}
+  .navr a.btn.ghost.active,.navr a.btn.ghost[aria-current="page"]{color:var(--green);background:rgba(14,77,69,.08)}
+  .navr .tg{width:100%;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);justify-content:stretch}
+  .navr .tg button{font-size:17px;padding:12px 14px;flex:1;text-align:center}
+  .navr > .btn{width:100%;text-align:center;padding:14px;margin-top:4px}
 }
-/* Desktop nav: all links visible */
+/* Desktop nav: compact + wrapped so it stays usable on smaller desktops */
 @media(min-width:861px){
-  .navr a.btn.ghost{font-size:14px;padding:6px 10px}
-  .tg button{font-size:13px;padding:5px 10px}
+  .navr{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:6px}
+  .navr a.btn.ghost{font-size:13px;padding:6px 8px;white-space:nowrap}
+  .navr .tg{margin:0 2px}
+  .navr .tg button{font-size:16px;padding:8px 14px}
+  .navr > .btn{font-size:13px;padding:8px 14px}
 }
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
