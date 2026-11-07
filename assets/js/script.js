@@ -9,16 +9,10 @@
       '<a class="btn ghost" data-nav="medicines">Medicines</a>'+
       '<a class="btn ghost" data-nav="reminder">Reminders</a>'+
       '<a class="btn ghost" data-nav="dashboard">Dashboard</a>'+
-      '<div class="nav-dropdown">'+
-        '<button class="btn ghost nav-dropdown-btn">More ▾</button>'+
-        '<div class="nav-dropdown-menu">'+
-          '<a class="btn ghost" data-nav="add">Add Prescription</a>'+
-          '<a class="btn ghost" data-nav="history">History</a>'+
-          '<a class="btn ghost" data-nav="profile">Profile</a>'+
-          '<a class="btn ghost" data-nav="settings">Settings</a>'+
-          '<a class="btn ghost" data-nav="download">Download</a>'+
-        '</div>'+
-      '</div>'+
+      '<a class="btn ghost" data-nav="add">Add Prescription</a>'+
+      '<a class="btn ghost" data-nav="history">History</a>'+
+      '<a class="btn ghost" data-nav="profile">Profile</a>'+
+      '<a class="btn ghost" data-nav="settings">Settings</a>'+
       '<div class="tg" role="group" aria-label="Language">'+
         '<button data-l="en" aria-pressed="true">EN</button>'+
         '<button data-l="ur" aria-pressed="false">اردو</button>'+
