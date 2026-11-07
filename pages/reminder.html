@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MED SCAN – Dose Reminder Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="wrap">
+<div id="navbar-placeholder"></div>
+
+<section style="padding:40px 0 10px">
+  <div class="today" data-i="today">Today’s doses</div>
+  <div class="dose-list" id="doses">
+    <div class="dose-item"><div class="dose-info"><span class="m">Morning · 8:00</span><span class="t">1 × Paracetamol, after food</span></div><div class="actions"><button class="btn-act btn-taken" data-i="taken">Taken</button><button class="btn-act btn-skip" data-i="skip">Skip</button></div></div>
+    <div class="dose-item"><div class="dose-info"><span class="m">Afternoon · 2:00</span><span class="t">1 × Amoxicillin, after food</span></div><div class="actions"><button class="btn-act btn-taken" data-i="taken">Taken</button><button class="btn-act btn-skip" data-i="skip">Skip</button></div></div>
+    <div class="dose-item"><div class="dose-info"><span class="m">Night · 9:30</span><span class="t">1 × Paracetamol · 1 × Amoxicillin</span></div><div class="actions"><button class="btn-act btn-taken" data-i="taken">Taken</button><button class="btn-act btn-skip" data-i="skip">Skip</button></div></div>
+  </div>
+  <div class="stats-card">
+    <div class="stats-row">
+      <div class="stat-box"><b id="statTaken">3</b><span data-i="tk">taken today</span></div>
+      <div class="stat-box"><b id="statSkip">0</b><span data-i="sk">skipped today</span></div>
+      <div class="stat-box"><b id="statLeft">0</b><span data-i="lf">doses left</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div style="max-width:700px;margin:0 auto">
+    <h2 style="font-size:clamp(28px,4vw,40px);font-weight:800;text-align:center;margin-bottom:10px" data-i="who">Never miss a dose</h2>
+    <p style="color:var(--muted);text-align:center;max-width:42em;margin:0 auto 30px" data-i="whyd">MED SCAN sets an alarm for every dose, for exactly as many days as your doctor prescribed. Tap Taken or Skip to keep your log up to date.</p>
+    <div class="grid">
+      <div class="g"><h3 style="color:var(--ink)">Timely alarms</h3><p style="color:var(--muted)">Get notified before every scheduled dose.</p></div>
+      <div class="g"><h3 style="color:var(--ink)">Adherence tracking</h3><p style="color:var(--muted)">See streaks, missed doses and weekly summaries.</p></div>
+      <div class="g"><h3 style="color:var(--ink)">Private log</h3><p style="color:var(--muted)">Your dose history stays on your phone only.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer><span>© 2026 MED SCAN</span><span data-i="fb">Built with FastAPI, LangGraph, Gemini and Flutter</span></footer>
+</div>
+<script src="../assets/js/script.js"></script>
+<script>
+(function(){
+  var taken=0, skipped=0, total=3;
+  var items=document.querySelectorAll('.dose-item');
+  items.forEach(function(item){
+    var btnTaken=item.querySelector('.btn-taken');
+    var btnSkip=item.querySelector('.btn-skip');
+    function refresh(){
+      document.getElementById('statTaken').textContent=taken;
+      document.getElementById('statSkip').textContent=skipped;
+      document.getElementById('statLeft').textContent=Math.max(0,total-taken-skipped);
+    }
+    btnTaken.addEventListener('click',function(){
+      if(item.classList.contains('done'))return;
+      item.classList.add('done'); taken++; btnTaken.disabled=true; btnSkip.disabled=true; refresh();
+    });
+    btnSkip.addEventListener('click',function(){
+      if(item.classList.contains('done'))return;
+      item.classList.add('done'); skipped++; btnTaken.disabled=true; btnSkip.disabled=true; refresh();
+    });
+  });
+  refresh();
+})();
+</script>
+</body>
+</html>

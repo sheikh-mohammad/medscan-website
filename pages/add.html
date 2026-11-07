@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MED SCAN – Add Prescription</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="wrap">
+<div id="navbar-placeholder"></div>
+
+<section style="padding:40px 0 20px">
+  <div class="add-card">
+    <h2 data-i="ap">Add Prescription</h2>
+    <p data-i="apd">Upload a photo of your prescription or enter details manually.</p>
+    <label class="upload" for="file">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <input type="file" id="file" class="file-input" accept="image/*">
+      <p data-i="up">Upload prescription photo</p>
+    </label>
+    <div class="field"><label data-i="med">Medicine name</label><input type="text" placeholder="e.g. Paracetamol" data-i="mph"><div class="hint" data-i="mhd">As written on the prescription</div></div>
+    <div class="field"><label data-i="dose">Dose</label><input type="text" placeholder="e.g. 1+0+1" data-i="dph"><div class="hint" data-i="dhd">1+0+1, BD, TDS, HS, SOS</div></div>
+    <div class="field"><label data-i="when">Time</label><input type="time" data-i="tph"><div class="hint" data-i="thd">When to take each dose</div></div>
+    <div class="field"><label data-i="days">Days</label><input type="number" placeholder="5" min="1" max="90" data-i="daph"><div class="hint" data-i="dahd">How many days to continue</div></div>
+    <a class="btn btn-full" href="dashboard.html" data-i="add">Add medicine</a>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div style="max-width:700px;margin:0 auto">
+    <h2 style="font-size:clamp(28px,4vw,40px);font-weight:800;text-align:center;margin-bottom:10px" data-i="who">Two ways to add</h2>
+    <p style="color:var(--muted);text-align:center;max-width:42em;margin:0 auto 30px" data-i="whyd">Snap a photo of your prescription or type the details in manually. MED SCAN handles both.</p>
+    <div class="grid">
+      <div class="g"><h3 style="color:var(--ink)">Photo upload</h3><p style="color:var(--muted)">AI reads handwriting from your prescription image.</p></div>
+      <div class="g"><h3 style="color:var(--ink)">Manual entry</h3><p style="color:var(--muted)">Type medicine name, dose, time and days.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer><span>© 2026 MED SCAN</span><span data-i="fb">Built with FastAPI, LangGraph, Gemini and Flutter</span></footer>
+</div>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

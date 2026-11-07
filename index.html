@@ -6,29 +6,19 @@
 <title>MED SCAN – Your prescription, explained</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="wrap">
-<nav>
-  <a class="logo" href="index.html"><i>M</i>MED SCAN</a>
-  <div class="navr">
-    <div class="tg" role="group" aria-label="Language">
-      <button data-l="en" aria-pressed="true">EN</button>
-      <button data-l="ur" aria-pressed="false">اردو</button>
-      <button data-l="ru" aria-pressed="false">RU</button>
-    </div>
-    <a class="btn" href="download.html" data-i="nav">Get the app</a>
-  </div>
-</nav>
+<div id="navbar-placeholder"></div>
 
 <header class="hero" id="top">
   <div>
     <h1 data-i="h1">Your prescription, <em>decoded.</em> Your doses, never missed.</h1>
     <p class="lead" data-i="lead">Snap a photo of any doctor’s handwriting. MED SCAN reads it, decodes 1+0+1 and TDS, and reminds you before every dose.</p>
     <div class="cta">
-      <a class="btn" href="how.html" data-i="how">See how it works</a>
-      <a class="btn ghost" href="download.html" data-i="nav">Get the app</a>
+      <a class="btn" href="pages/how.html" data-i="how">See how it works</a>
+      <a class="btn ghost" href="pages/download.html" data-i="nav">Get the app</a>
     </div>
     <div class="langs"><span>English</span><span>Roman Urdu</span><span class="ur" style="line-height:1.6;font-size:15px">اردو</span></div>
   </div>
@@ -87,11 +77,42 @@
       <span class="n" data-i="sn3">Step 3</span><h3 data-i="st3">Never miss it</h3><p data-i="sp3">Alarms for every dose, for exactly as many days as prescribed.</p>
     </div>
   </div>
-  <div class="cta" style="justify-content:center;margin-top:40px"><a class="btn" href="features.html">Explore features</a></div>
+  <div class="cta" style="justify-content:center;margin-top:40px"><a class="btn" href="pages/features.html">Explore features</a></div>
+</section>
+
+<section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div style="max-width:900px;margin:0 auto">
+    <h2 style="font-size:clamp(28px,4vw,40px);font-weight:800;text-align:center;margin-bottom:10px" data-i="why">Why MED SCAN</h2>
+    <p style="color:var(--muted);text-align:center;max-width:42em;margin:0 auto 40px" data-i="whyd">Handwritten prescriptions are hard to read. One misread dose can be dangerous. MED SCAN turns the scribble into a clear schedule you can trust.</p>
+    <div class="grid">
+      <div class="g"><h3 style="color:var(--ink)">Reads handwriting</h3><p style="color:var(--muted)">AI scans the prescription and extracts medicine names and dosing codes.</p></div>
+      <div class="g"><h3 style="color:var(--ink)">Verifies medicines</h3><p style="color:var(--muted)">Every name is checked against a verified database before reminders are set.</p></div>
+      <div class="g"><h3 style="color:var(--ink)">Never misses a dose</h3><p style="color:var(--muted)">Alarms for every dose, for exactly as many days as prescribed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:70px 0">
+  <div class="split" style="grid-template-columns:1fr 1.2fr">
+    <div>
+      <h2 class="title" data-i="who">Who it's for</h2>
+      <p class="sub" data-i="whod">Anyone managing daily medicines — seniors, caregivers, patients with multiple prescriptions, and anyone who struggles to read a doctor’s handwriting.</p>
+      <ul style="color:var(--muted);font-size:16px;line-height:1.8;margin:24px 0">
+        <li data-i="wl1">Seniors with multiple daily medicines</li>
+        <li data-i="wl2">Caregivers managing family schedules</li>
+        <li data-i="wl3">Patients with complex prescriptions</li>
+        <li data-i="wl4">Anyone who can’t read handwritten notes</li>
+      </ul>
+    </div>
+    <div class="tri" dir="ltr">
+      <div><small>Before</small>“Take 1+0+1 after food” — what does that even mean?</div>
+      <div><small>After</small>Take 1 tablet in the morning, none at lunch, 1 at night, after food, for 5 days.</div>
+    </div>
+  </div>
 </section>
 
 <footer><span>© 2026 MED SCAN</span><span data-i="fb">Built with FastAPI, LangGraph, Gemini and Flutter</span></footer>
 </div>
-<script src="script.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MED SCAN – Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="wrap">
+<div id="navbar-placeholder"></div>
+
+<section style="padding:40px 0 10px">
+  <h2 class="title" data-i="db">Dashboard</h2>
+  <p class="sub" data-i="ds">Your medicine schedule at a glance.</p>
+  <div class="dash-grid">
+    <div class="dash-card">
+      <h3 data-i="tk">Taken today</h3>
+      <span class="big" id="dTaken">3</span>
+      <p data-i="tkd">doses marked taken</p>
+    </div>
+    <div class="dash-card">
+      <h3 data-i="sk">Skipped today</h3>
+      <span class="big" id="dSkip">0</span>
+      <p data-i="skd">doses skipped</p>
+    </div>
+    <div class="dash-card">
+      <h3 data-i="st">Streak</h3>
+      <span class="big" id="dStreak">5</span>
+      <p data-i="std">day streak</p>
+    </div>
+    <div class="dash-card">
+      <h3 data-i="up">Up next</h3>
+      <span class="big">9:30 PM</span>
+      <p>Night dose</p>
+    </div>
+  </div>
+  <div class="upcoming">
+    <h3 data-i="upc">Upcoming doses</h3>
+    <div class="up-list">
+      <div class="up-item"><div class="info"><span class="m">Morning · 8:00</span><span class="t">1 × Paracetamol, after food</span></div><span class="chip">Taken</span></div>
+      <div class="up-item"><div class="info"><span class="m">Afternoon · 2:00</span><span class="t">1 × Amoxicillin, after food</span></div><span class="chip">Taken</span></div>
+      <div class="up-item"><div class="info"><span class="m">Night · 9:30</span><span class="t">1 × Paracetamol · 1 × Amoxicillin</span></div><span class="chip" style="background:var(--green)">Pending</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div style="max-width:700px;margin:0 auto">
+    <h2 style="font-size:clamp(28px,4vw,40px);font-weight:800;text-align:center;margin-bottom:10px" data-i="who">Stay on track</h2>
+    <p style="color:var(--muted);text-align:center;max-width:42em;margin:0 auto 30px" data-i="whyd">Your dashboard shows today’s progress and what’s coming next, so you never lose sight of your schedule.</p>
+    <div class="grid">
+      <div class="g"><h3 style="color:var(--ink)">Today’s summary</h3><p style="color:var(--muted)">Taken, skipped and pending doses at a glance.</p></div>
+      <div class="g"><h3 style="color:var(--ink)">Upcoming doses</h3><p style="color:var(--muted)">See what’s due next so you can plan ahead.</p></div>
+      <div class="g"><h3 style="color:var(--ink)">Streak tracker</h3><p style="color:var(--muted)">Build and maintain your medication streak.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer><span>© 2026 MED SCAN</span><span data-i="fb">Built with FastAPI, LangGraph, Gemini and Flutter</span></footer>
+</div>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>
