@@ -51,6 +51,7 @@
       mob.addEventListener('click',function(){
         var open=mob.getAttribute('aria-expanded')==='true';
         mob.setAttribute('aria-expanded',String(!open));
+        navr.classList.toggle('open');
         navr.style.display=open?'none':'flex';
       });
       ph.querySelectorAll('.navr a').forEach(function(a){
